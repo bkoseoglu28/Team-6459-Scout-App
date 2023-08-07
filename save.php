@@ -21,32 +21,9 @@ $teamid = $_POST["teamid"];
 $notes = $_POST["notes"];
 $matchid = $_POST["matchid"];
 $penalties = $_POST["penalties"];
+$grid = $_POST["GridStatus"];
 
-if ($highkoni>0 or $highkupumsu>0){
-	$totalhighobject=$highkoni+$highkupumsu;
-	$totalpoint=$totalpoint+($totalhighobject*5);
-}
-if ($midkoni>0 or $midkupumsu>0){
-	$totalmidobject=$midkoni+$midkupumsu;
-	$totalpoint=$totalpoint+($totalmidobject*3);
-}
-if ($lowkoni>0 or $lowkupumsu>0){
-	$totallowobject=$lowkoni+$lowkupumsu;
-	$totalpoint=$totalpoint+($totallowobject*2);
-}
-// -------------------------------------------------------------------------------------
-if ($otohighkoni>0 or $otohighkupumsu>0){
-	$totalotohighobject=$otohighkoni+$otohighkupumsu;
-	$totalpoint=$totalpoint+($totalotohighobject*6);
-}
-if ($otomidkoni>0 or $otomidkupumsu>0){
-	$totalotomidobject=$otomidkoni+$otomidkupumsu;
-	$totalpoint=$totalpoint+($totalotomidobject*4);
-}
-if ($otolowkoni>0 or $otolowkupumsu>0){
-	$totalotolowobject=$otolowkoni+$otolowkupumsu;
-	$totalpoint=$totalpoint+($totalotolowobject*3);
-}
+
 if ($chargingstationstatus==1){
 	$totalpoint = 2;
 }elseif ($chargingstationstatus==2){
@@ -74,7 +51,7 @@ $ip = getip();
 
 
 
-$sql = "INSERT INTO `data` (`req_ip`, `teamid`,`highkoni`, `otohighkoni`, `midkoni`, `otomidkoni`, `lowkoni`, `otolowkoni`, `highkupumsu`, `otohighkupumsu`, `midkupumsu`, `otomidkupumsu`, `lowkupumsu`, `otolowkupumsu`, `chargingstationstatus`, `hangarcheckbox`, `ballcheckbox`, `defanscheckbox`, `imagerawdata`, `matchid`, `notes`, `totalpoint`, `penalties`) VALUES ('$ip', '$teamid','$highkoni', '$otohighkoni', '$midkoni', '$otomidkoni', '$lowkoni', '$otolowkoni', '$highkupumsu', '$otohighkupumsu', '$midkupumsu', '$otomidkupumsu', '$lowkupumsu', '$otolowkupumsu', '$chargingstationstatus', '$hangarcheckbox', '$ballcheckbox', '$defanscheckbox', '$imagerawdata', '$matchid', '$notes', '$totalpoint', '$penalties');";
+$sql = "INSERT INTO `data` (`req_ip`, `teamid`,`highkoni`, `otohighkoni`, `midkoni`, `otomidkoni`, `lowkoni`, `otolowkoni`, `highkupumsu`, `otohighkupumsu`, `midkupumsu`, `otomidkupumsu`, `lowkupumsu`, `otolowkupumsu`, `chargingstationstatus`, `hangarcheckbox`, `ballcheckbox`, `defanscheckbox`, `imagerawdata`, `matchid`, `notes`, `totalpoint`, `penalties`, `grid`) VALUES ('$ip', '$teamid','$highkoni', '$otohighkoni', '$midkoni', '$otomidkoni', '$lowkoni', '$otolowkoni', '$highkupumsu', '$otohighkupumsu', '$midkupumsu', '$otomidkupumsu', '$lowkupumsu', '$otolowkupumsu', '$chargingstationstatus', '$hangarcheckbox', '$ballcheckbox', '$defanscheckbox', '$imagerawdata', '$matchid', '$notes', '$totalpoint', '$penalties', '$grid');";
 if($conn->query($sql)){
 	header("location:index.html");
 }else{

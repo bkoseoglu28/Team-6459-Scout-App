@@ -130,6 +130,11 @@ include 'connection/connection.php';
   margin-bottom: 4px;
   background-color: #000000;
   }
+  .grid-object{
+  max-width: 10%;
+  height: auto;
+  background-size: cover;
+}
 </style>
 </aside>
   <div class="main-wrapper">
@@ -150,7 +155,7 @@ include 'connection/connection.php';
   </div>
 </nav>
 <?php 
-      $code ='python veriçekme.py '.$_POST["teamid"].'';
+      $code ='py veriçekme.py '.$_POST["teamid"].'';
       $command = escapeshellcmd($code);
     $output = shell_exec($command);
       $lastoutput=explode('|', $output);
@@ -164,7 +169,7 @@ include 'connection/connection.php';
         <h2 class="main-title">Team <?php echo $_POST["teamid"]; ?> için sonuçlar</h2>
         <a style="background-color: green" class="form-btn primary-default-btn transparent-btn" href="https://www.thebluealliance.com/team/<?php echo $_POST["teamid"]; ?>">Takımın The Blue Alliance Sayfasına Git</a>
         <div class="row">
-          <div class="col-lg-3">
+          <div class="col-lg-3" style="flex: 0 0 100%;max-width: 100%;">
             <article class="white-block">
             <?php 
 $teamid = $_POST["teamid"];
@@ -240,6 +245,88 @@ $total = $total + $row["highauto"];
                     <div class="top-cat-list__title">
                       Toplam Puan <span><?php echo $row["totalpoint"] ?></span>
                     </div><br>
+                    <div id="grid-col-1"> 
+                    <?php
+                    $grid = explode(",", $row["grid"]);
+                    
+                    for ($i = 0; $i < 9; $i++) {
+                      if ($i == 1 || $i == 4 || $i == 7) {
+                          if (intval($grid[$i]) == 1) {
+                              echo('<img id="High' . ($i+1) . '" class="grid-object" style="background-image: url(img/frc2023cube.jpg);" src="img/placed.png" alt="0">');
+                              
+                            } elseif (intval($grid[$i]) == 2) {
+                              echo('<img id="High' . ($i+1) . '" class="grid-object" style="background-image: url(img/frc2023cube.jpg);" src="img/oto-placed.png" alt="0">');
+                              
+                            } else {
+                              echo('<img id="High' . ($i+1) . '" class="grid-object" src="img/frc2023cube.jpg" alt="0">');
+                              
+                            }
+                      }else{
+                        if (intval($grid[$i]) == 1) {
+                          echo('<img id="High' . ($i+1) . '" class="grid-object" style="background-image: url(img/frc2023cone.jpg);" src="img/placed.png" alt="0">');
+                        
+                        } elseif (intval($grid[$i]) == 2) {
+                          echo('<img id="High' . ($i+1) . '" class="grid-object" style="background-image: url(img/frc2023cone.jpg);" src="img/oto-placed.png" alt="0">');
+                          
+                        } else {
+                          echo('<img id="High' . ($i+1) . '" class="grid-object" src="img/frc2023cone.jpg" alt="0">');
+                          
+                        }
+                      }
+                  }
+                    ?>
+                    </div>
+                    <div id="grid-col-2"> 
+                    <?php
+                    
+
+                    for ($i = 9; $i < 18; $i++) {
+                      if ($i == 10 || $i == 13 || $i == 16) {
+                          if (intval($grid[$i]) == 1) {
+                              echo('<img id="Mid' . ($i+1) . '" class="grid-object" style="background-image: url(img/frc2023cube.jpg);" src="img/placed.png" alt="0">');
+                          } elseif (intval($grid[$i]) == 2) {
+                              echo('<img id="Mid' . ($i+1) . '" class="grid-object" style="background-image: url(img/frc2023cube.jpg);" src="img/oto-placed.png" alt="0">');
+                          } else {
+                              echo('<img id="Mid' . ($i+1) . '" class="grid-object" src="img/frc2023cube.jpg" alt="0">');
+                          }
+                      }else{
+                        if (intval($grid[$i]) == 1) {
+                          echo('<img id="Mid' . ($i+1) . '" class="grid-object" style="background-image: url(img/frc2023cone.jpg);" src="img/placed.png" alt="0">');
+                      } elseif (intval($grid[$i]) == 2) {
+                          echo('<img id="Mid' . ($i+1) . '" class="grid-object" style="background-image: url(img/frc2023cone.jpg);" src="img/oto-placed.png" alt="0">');
+                      } else {
+                          echo('<img id="Mid' . ($i+1) . '" class="grid-object" src="img/frc2023cone.jpg" alt="0">');
+                      }
+                      }
+                  }
+                    ?>
+                    </div>
+                    <div id="grid-col-3"> 
+                    <?php
+                    
+
+                    for ($i = 18; $i < 27; $i++) {
+                      if ($i == 19 || $i == 22 || $i == 24) {
+                          if (intval($grid[$i]) == 1) {
+                              echo('<img id="Low' . ($i+1) . '" class="grid-object" style="background-image: url(img/anythinglogo.jpg);" src="img/placed.png" alt="0">');
+                          } elseif (intval($grid[$i]) == 2) {
+                              echo('<img id="Low' . ($i+1) . '" class="grid-object" style="background-image: url(img/anythinglogo.jpg);" src="img/oto-placed.png" alt="0">');
+                          } else {
+                              echo('<img id="Low' . ($i+1) . '" class="grid-object" src="img/anythinglogo.jpg" alt="0">');
+                          }
+                      }else{
+                        if (intval($grid[$i]) == 1) {
+                          echo('<img id="Low' . ($i+1) . '" class="grid-object" style="background-image: url(img/anythinglogo.jpg);" src="img/placed.png" alt="0">');
+                      } elseif (intval($grid[$i]) == 2) {
+                          echo('<img id="Low' . ($i+1) . '" class="grid-object" style="background-image: url(img/anythinglogo.jpg);" src="img/oto-placed.png" alt="0">');
+                      } else {
+                          echo('<img id="Low' . ($i+1) . '" class="grid-object" src="img/anythinglogo.jpg" alt="0">');
+                      }
+                      }
+                  }
+                    ?>
+                    </div>
+                    <br>
                     <div class="top-cat-list__subtitle">
                       Low Auto <span class="warning"><?php echo $row["lowauto"]; ?></span>
                     </div><br>
@@ -257,22 +344,19 @@ $total = $total + $row["highauto"];
 
                     $Hangar = "";
 
-                    $Hangar = $row["hangartype"];
+                    $Hangar = $row["chargingstationstatus"];
 
                     if($Hangar == 0){
                       $Hangar = "Tırmanma Yok";
                     }
                     if($Hangar == 1){
-                      $Hangar = "LOW RUNG";
+                      $Hangar = "Taxi";
                     }
                     if($Hangar == 2){
-                      $Hangar = "MID RUNG";
+                      $Hangar = "Çıktı Fakat Dengesiz";
                     }
                     if($Hangar == 3){
-                      $Hangar = "HIGH RUNG";
-                    }
-                     if($Hangar == 4){
-                      $Hangar = "TRAVERSAL RUNG";
+                      $Hangar = "Çıktı Ve Dengeli";
                     }
 
                      ?>

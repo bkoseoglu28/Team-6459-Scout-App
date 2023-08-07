@@ -124,7 +124,7 @@ return $total/$count;
                         </li>
                     </ul>
                     <a class="show-cat-btn" href="##">
-                        <span class="icon document" aria-hidden="true"></span>FRC 2022
+                        <span class="icon document" aria-hidden="true"></span>FRC 2023
                         <span class="category__btn transparent-btn" title="Open list">
                             <span class="sr-only">Open list</span>
                             <span class="icon arrow-down" aria-hidden="true"></span>

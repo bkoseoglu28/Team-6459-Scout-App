@@ -101,7 +101,7 @@ include 'connection/connection.php';
                     <div class="top-cat-list__subtitle">
                     <?php 
         
-              $code ='python veriçekmeyıllı.py '.$_POST["teamid"].' '.$_POST["yearid"].'';
+              $code ='py veriçekmeyıllı.py '.$_POST["teamid"].' '.$_POST["yearid"].'';
               $command = escapeshellcmd($code);
             $output = shell_exec($command);
               $lastoutput=explode('|', $output);

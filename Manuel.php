@@ -64,7 +64,7 @@
                         </li>
                     </ul>
                     <a class="show-cat-btn" href="##">
-                        <span class="icon document" aria-hidden="true"></span>FRC 2022
+                        <span class="icon document" aria-hidden="true"></span>FRC 2023
                         <span class="category__btn transparent-btn" title="Open list">
                             <span class="sr-only">Open list</span>
                             <span class="icon arrow-down" aria-hidden="true"></span>
@@ -101,11 +101,11 @@
     <!-- ! Main -->
     <main class="main users chart-page" id="skip-target">
       <div class="container">
-        <h2 class="main-title">FRC 2022 Manual</h2>
+        <h2 class="main-title">FRC 2023 Manual</h2>
         <div class="row">
           <div class="col-lg-3">
-          <object data="Manuel.pdf" type="application/pdf" width="1500" height="850">
-            <p>Alternative text - include a link <a href="Manuel.pdf">to the PDF!</a></p>
+          <object data="Manual.pdf" type="application/pdf" width="1500" height="850">
+            <p>Alternative text - include a link <a href="Manual.pdf">to the PDF!</a></p>
           </object>
           </div>
         </div>
