@@ -32,17 +32,18 @@ Explore historical data, including team awards and rankings from previous years.
 
 ## Screenshots
 
-![Screenshot 1](/img/github/FormUI.png)
-*Description of the screenshot.*
+![Screenshot 1](/img/github/FormUI.jpg)
+*The Form Page That The Student Write*
 
-![Screenshot 2](/screenshots/screenshot2.png)
-*Description of the screenshot.*
+![Screenshot 2](/img/github/GridUI.jpg)
+*Fully Functional Grid Placement UI*
 
 ## Technologies
 
-- Built using React Native for cross-platform compatibility.
-- Utilizes Firebase for real-time data storage and synchronization.
-- Integrates [Library/Tool Name] for [specific functionality].
+- Integrates PHP for database management.
+- Utilizes MySQL for database storage.
+- Utilizes BeautifulSoup, a Python library, for retrieving information from the internet.
+- HTML, CSS, and JavaScript for custom buttons and web design.
 
 ## Contact
 
