@@ -87,7 +87,6 @@
          <?php if($_POST){ if($_POST["ballcheckbox"]==1){echo '<script type="text/javascript">document.getElementById("ballcheckbox").value = 1;</script>';}} ?>
          <?php if($_POST){ if($_POST["hangarcheckbox"]==1){echo '<script type="text/javascript">document.getElementById("hangarcheckbox").value = 1;</script>';}} ?>
          <?php if($_POST){ if($_POST["defanscheckbox"]==1){echo '<script type="text/javascript">document.getElementById("defanscheckbox").value = 1;</script>';}} ?>
-         <?php if($_POST){ if($_POST["otostationcheckbox"]==1){echo '<script type="text/javascript">document.getElementById("otostationcheckbox").value = 1;</script>';}} ?>
 
 
       </label>
@@ -139,11 +138,9 @@ var IsotomidkupumsuAlreadySaved = 0;
 var IsotolowkupumsuAlreadySaved = 0;
 var IsGridAlreadySaved = 0;
 var IsStationSaved = 0;
-var IsotoStationSaved = 0;
 var ChargingStationStatus = 0;
 var IsTriggered = 0;
 var IsStationTriggered = 0;
-var IsotoStationTriggered = 0;
 var IsDefansTriggerd = 0;
 grid = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0],

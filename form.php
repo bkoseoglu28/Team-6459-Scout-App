@@ -216,7 +216,7 @@
 }
 </style>
   <div class="layer"></div>
-<main class="page-center">
+<main style="width: fit-content;margin:auto;" class="page-center">
   <article class="sign-up">
     <form class="sign-up-form form" action="" id="scform" method="POST" style="margin-top: 3%;" class="col-sm-10 col-md-4 col-lg-2">
 <input type="hidden" name="imagerawdata" id="imagerawdata" value="">
