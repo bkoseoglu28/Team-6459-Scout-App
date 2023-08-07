@@ -220,18 +220,8 @@
   <article class="sign-up">
     <form class="sign-up-form form" action="" id="scform" method="POST" style="margin-top: 3%;" class="col-sm-10 col-md-4 col-lg-2">
 <input type="hidden" name="imagerawdata" id="imagerawdata" value="">
-<input type="hidden" name="otohighkoni" id="otohighkoni" value="0">
-<input type="hidden" name="otomidkoni" id="otomidkoni" value="0">
-<input type="hidden" name="otolowkoni" id="otolowkoni" value="0">
-<input type="hidden" name="lowkoni" id="lowkoni" value="0">
-<input type="hidden" name="highkoni" id="highkoni" value="0">
-<input type="hidden" name="midkoni" id="midkoni" value="0">
-<input type="hidden" name="otohighkupumsu" id="otohighkupumsu" value="0">
-<input type="hidden" name="otomidkupumsu" id="otomidkupumsu" value="0">
-<input type="hidden" name="otolowkupumsu" id="otolowkupumsu" value="0">
-<input type="hidden" name="lowkupumsu" id="lowkupumsu" value="0">
-<input type="hidden" name="highkupumsu" id="highkupumsu" value="0">
-<input type="hidden" name="midkupumsu" id="midkupumsu" value="0">
+<input type="hidden" name="autototal" id="autototal" value="0">
+<input type="hidden" name="teletotal" id="teletotal" value="0">
 <input type="hidden" name="chargingstationstatus" id="chargingstationstatus" value="0">
 <input type="hidden" name="notes" id="notes" value="">
 <input type="hidden" name="teamid" id="teamid" value="">
@@ -272,29 +262,9 @@
 <?php 
 
 if($_POST){
-  echo 'otohighkoni = '. $_POST["otohighkoni"].';
+  echo 'document.getElementById("autototal").value = '. $_POST["autototal"].';
   ';
-  echo 'otomidkoni = '. $_POST["otomidkoni"].';
-  ';
-  echo 'otolowkoni = '. $_POST["otolowkoni"].';
-  ';
-  echo 'lowkoni = '. $_POST["lowkoni"].';
-  ';
-  echo 'highkoni = '. $_POST["highkoni"].';
-  ';
-  echo 'midkoni = '. $_POST["midkoni"].';
-  ';
-  echo 'otohighkupumsu = '. $_POST["otohighkupumsu"].';
-  ';
-  echo 'otomidkupumsu = '. $_POST["otomidkupumsu"].';
-  ';
-  echo 'otolowkupumsu = '. $_POST["otolowkupumsu"].';
-  ';
-  echo 'lowkupumsu = '. $_POST["lowkupumsu"].';
-  ';
-  echo 'highkupumsu = '. $_POST["highkupumsu"].';
-  ';
-  echo 'midkupumsu = '. $_POST["midkupumsu"].';
+  echo 'document.getElementById("teletotal").value = '. $_POST["teletotal"].';
   ';
   echo 'document.getElementById("chargingstationstatus").value = '. $_POST["chargingstationstatus"].';
   ';

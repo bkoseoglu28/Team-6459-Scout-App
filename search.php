@@ -185,7 +185,7 @@ else{
   echo "Fotoğraf yok";
 }
  ?>      
-              <img id="canvasimg" style="display:none;">
+              <img id="canvasimg" style="width: min-content;display:none;">
               <br>
               <div class="top-cat-list__titlez">Rankings</div>
               <div class="top-cat-list__subtitlep"><?php 
@@ -232,7 +232,7 @@ if ($result->num_rows > 0) {
   // output data of each row
   while($row = $result->fetch_assoc()) {
 $count = $count + 1;  
-$total = $total + $row["highauto"]; 
+$total = $total + $row["totalpoint"]; 
 
 
 
@@ -241,10 +241,8 @@ $total = $total + $row["highauto"];
 
 
                 <li>
-                  <a href="details.php?id=<?php echo $row["id"]; ?>">
-                    <div class="top-cat-list__title">
-                      Toplam Puan <span><?php echo $row["totalpoint"] ?></span>
-                    </div><br>
+                  <a href="details.php?id=<?php echo $row["id"]; ?>" >
+                    <br>
                     <div id="grid-col-1"> 
                     <?php
                     $grid = explode(",", $row["grid"]);
@@ -328,16 +326,13 @@ $total = $total + $row["highauto"];
                     </div>
                     <br>
                     <div class="top-cat-list__subtitle">
-                      Low Auto <span class="warning"><?php echo $row["lowauto"]; ?></span>
+                      Auto Total <span class="warning"><?php echo $row["autototal"]; ?></span>
                     </div><br>
                     <div class="top-cat-list__subtitle">
-                      Low Teleop <span class="warning"><?php echo $row["lowteleop"]; ?></span>
+                      Teleop Total <span class="warning"><?php echo $row["teletotal"]; ?></span>
                     </div><br>
-                    <div class="top-cat-list__subtitle">
-                      High Auto <span class="warning"><?php echo $row["highauto"]; ?></span>
-                    </div><br>
-                    <div class="top-cat-list__subtitle">
-                      High Teleop <span class="warning"><?php echo $row["highteleop"]; ?></span>
+                    <div class="top-cat-list__title">
+                      Toplam Puan <span><?php echo $row["totalpoint"] ?></span>
                     </div><br>
                     <?php 
 
@@ -374,7 +369,7 @@ $total = $total + $row["highauto"];
 
     <?php
   }
-  echo "<br> HIGH AUTO AVERAGE = ".$total/$count;
+  echo "<br> Ortalama Puanları = ".$total/$count;
 } else {
   echo "0 results";
 }

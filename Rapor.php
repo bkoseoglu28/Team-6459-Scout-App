@@ -49,18 +49,8 @@
     <h1 class="sign-up__title">Scout Raporu</h1>
     <p class="sign-up__subtitle">Aşağıya Girebilirsiniz</p>
     <form class="sign-up-form form" id="mainform" action="" method="POST">
-    <input type="hidden" name="otohighkoni" id="otohighkoni" value="0">
-    <input type="hidden" name="otomidkoni" id="otomidkoni" value="0">
-      <input type="hidden" name="otolowkoni" id="otolowkoni" value="0">
-      <input type="hidden" name="lowkoni" id="lowkoni" value="0">
-      <input type="hidden" name="highkoni" id="highkoni" value="0">
-      <input type="hidden" name="midkoni" id="midkoni" value="0">
-      <input type="hidden" name="otohighkupumsu" id="otohighkupumsu" value="0">
-      <input type="hidden" name="otomidkupumsu" id="otomidkupumsu" value="0">
-      <input type="hidden" name="otolowkupumsu" id="otolowkupumsu" value="0">
-      <input type="hidden" name="lowkupumsu" id="lowkupumsu" value="0">
-      <input type="hidden" name="highkupumsu" id="highkupumsu" value="0">
-      <input type="hidden" name="midkupumsu" id="midkupumsu" value="0">
+    <input type="hidden" name="autototal" id="autototal" value="0">
+    <input type="hidden" name="teletotal" id="teletotal" value="0">
       <input type="hidden" name="chargingstationstatus" id="chargingstationstatus" value="0">
       <input type="hidden" name="hangarcheckbox" id="hangarcheckbox" value="0">
       <input type="hidden" name="ballcheckbox" id="ballcheckbox" value="0">
@@ -112,30 +102,10 @@
 <script src="js/script.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script type="text/javascript">
-var highkoni = 0;
-var highkupumsu = 0;
-var midkoni = 0;
-var midkupumsu = 0;
-var lowkoni = 0;
-var lowkupumsu = 0;
-var otohighkupumsu = 0;
-var otohighkoni = 0;
-var otomidkupumsu = 0;
-var otomidkoni = 0;
-var otolowkupumsu = 0;
-var otolowkoni = 0;
-var IshighkoniAlreadySaved = 0;
-var IshighkupumsuAlreadySaved = 0;
-var IsmidkoniAlreadySaved = 0;
-var IsmidkupumsuAlreadySaved = 0;
-var IslowkoniAlreadySaved = 0;
-var IsotohighkoniAlreadySaved = 0;
-var IsotomidkoniAlreadySaved = 0;
-var IsotolowkoniAlreadySaved = 0;
-var IslowkupumsuAlreadySaved = 0;
-var IsotohighkupumsuAlreadySaved = 0;
-var IsotomidkupumsuAlreadySaved = 0;
-var IsotolowkupumsuAlreadySaved = 0;
+var AutoTotal = 0;
+var TeleTotal = 0;
+var TeleTotalisAlreadySaved = 0;
+var AutoTotalisAlreadySaved = 0;
 var IsGridAlreadySaved = 0;
 var IsStationSaved = 0;
 var ChargingStationStatus = 0;
@@ -151,81 +121,15 @@ var AutoMode = 0;
 <?php 
 
 if($_POST){
-  echo 'otohighkoni = '. $_POST["otohighkoni"].';
+  echo 'AutoTotal = '. $_POST["autototal"].';
   ';
-  echo 'otomidkoni = '. $_POST["otomidkoni"].';
-  ';
-  echo 'otolowkoni = '. $_POST["otolowkoni"].';
-  ';
-  echo 'lowkoni = '. $_POST["lowkoni"].';
-  ';
-  echo 'highkoni = '. $_POST["highkoni"].';
-  ';
-  echo 'midkoni = '. $_POST["midkoni"].';
-  ';
-  echo 'otohighkupumsu = '. $_POST["otohighkupumsu"].';
-  ';
-  echo 'otomidkupumsu = '. $_POST["otomidkupumsu"].';
-  ';
-  echo 'otolowkupumsu = '. $_POST["otolowkupumsu"].';
-  ';
-  echo 'lowkupumsu = '. $_POST["lowkupumsu"].';
-  ';
-  echo 'highkupumsu = '. $_POST["highkupumsu"].';
-  ';
-  echo 'midkupumsu = '. $_POST["midkupumsu"].';
+  echo 'TeleTotal = '. $_POST["teletotal"].';
   ';
   echo 'chargingstationstatus = '. $_POST["chargingstationstatus"].';
   ';
-  
-
-  echo 'IotohighkonisAlreadySaved = 1;
+  echo 'AutoTotalisAlreadySaved = 1;
   ';
-  echo 'IotomidkonisAlreadySaved = 1;
-  ';
-  echo 'IotolowkonisAlreadySaved = 1;
-  ';
-  echo 'IlowkonisAlreadySaved = 1;
-  ';
-  echo 'IhighkonisAlreadySaved = 1;
-  ';
-  echo 'ImidkonisAlreadySaved = 1;
-  ';
-  echo 'IotohighkupumsusAlreadySaved = 1;
-  ';
-  echo 'IotomidkupumsusAlreadySaved = 1;
-  ';
-  echo 'IotolowkupumsusAlreadySaved = 1;
-  ';
-  echo 'IlowkupumsusAlreadySaved = 1;
-  ';
-  echo 'IhighkupumsusAlreadySaved = 1;
-  ';
-  echo 'ImidkupumsusAlreadySaved = 1;
-  ';
-  echo 'IotohighkonisAlreadySaved = 1;
-  ';
-  echo 'IotomidkonisAlreadySaved = 1;
-  ';
-  echo 'IotolowkonisAlreadySaved = 1;
-  ';
-  echo 'IotolowkonisAlreadySaved = 1;
-  ';
-  echo 'IotohighkonisAlreadySaved = 1;
-  ';
-  echo 'IotomidkonisAlreadySaved = 1;
-  ';
-  echo 'IotohighkupumsusAlreadySaved = 1;
-  ';
-  echo 'IotomidkupumsusAlreadySaved = 1;
-  ';
-  echo 'IotolowkupumsusAlreadySaved = 1;
-  ';
-  echo 'IotolowkupumsusAlreadySaved = 1;
-  ';
-  echo 'IotohighkupumsusAlreadySaved = 1;
-  ';
-  echo 'IotomidkupumsusAlreadySaved = 1;
+  echo 'TeleTotalisAlreadySaved = 1;
   ';
   echo 'IsStationSaved = '.$_POST["hangarcheckbox"].';
   ';
@@ -281,13 +185,16 @@ if (Image.alt==0){Image.style.backgroundImage = `url(${Image.src})`;
   if (konumlar[1]==`High`){
     grid[0][konumlar[2]-1] = 2;
     console.log(`${grid}`);
+    AutoTotal = AutoTotal+6
   }
   else if (konumlar[1]==`Mid`){
     grid[1][konumlar[2]-1] = 2;
     console.log(`${grid}`);
+    AutoTotal = AutoTotal+4
   }else if (konumlar[1]==`Low`){
     grid[2][konumlar[2]-1] = 2;
     console.log(`${grid}`);
+    AutoTotal = AutoTotal+3
   }else{
     console.log(`Unexpected Position column:${konumlar[1]} row:${konumlar[2]}`);
   }
@@ -301,13 +208,16 @@ if (Image.alt==0){Image.style.backgroundImage = `url(${Image.src})`;
   if (konumlar[1]==`High`){
     grid[0][konumlar[2]-1] = 1;
     console.log(`${grid}`);
+    TeleTotal=TeleTotal+5
   }
   else if (konumlar[1]==`Mid`){
     grid[1][konumlar[2]-1] = 1;
     console.log(`${grid}`);
+    TeleTotal=TeleTotal+3
   }else if (konumlar[1]==`Low`){
     grid[2][konumlar[2]-1] = 1;
     console.log(`${grid}`);
+    TeleTotal=TeleTotal+2
   }else{
     console.log(`Unexpected Position column:${konumlar[1]} row:${konumlar[2]}`);
   }
@@ -413,18 +323,8 @@ function SaveStation(givenStationStatus){
 
 
 function AutoDraw(){
-  document.getElementById("otohighkoni").value = otohighkoni;
-  document.getElementById("otomidkoni").value = otomidkoni;
-  document.getElementById("otolowkoni").value = otolowkoni;
-  document.getElementById("lowkoni").value = lowkoni;
-  document.getElementById("highkoni").value = highkoni;
-  document.getElementById("midkoni").value = midkoni;
-  document.getElementById("otohighkupumsu").value = otohighkupumsu;
-  document.getElementById("otomidkupumsu").value = otomidkupumsu;
-  document.getElementById("otolowkupumsu").value = otolowkupumsu;
-  document.getElementById("lowkupumsu").value = lowkupumsu;
-  document.getElementById("highkupumsu").value = highkupumsu;
-  document.getElementById("midkupumsu").value = midkupumsu;
+  document.getElementById("autototal").value = AutoTotal;
+  document.getElementById("teletotal").value = TeleTotal;
   document.getElementById("chargingstationstatus").value = ChargingStationStatus;
   document.getElementById("GridStatus").value = grid;
   document.getElementById("mainform").action = "form.php";
@@ -433,18 +333,8 @@ function AutoDraw(){
 
 
 function SendForm(){
-  document.getElementById("otohighkoni").value = otohighkoni;
-  document.getElementById("otomidkoni").value = otomidkoni;
-  document.getElementById("otolowkoni").value = otolowkoni;
-  document.getElementById("lowkoni").value = lowkoni;
-  document.getElementById("highkoni").value = highkoni;
-  document.getElementById("midkoni").value = midkoni;
-  document.getElementById("otohighkupumsu").value = otohighkupumsu;
-  document.getElementById("otomidkupumsu").value = otomidkupumsu;
-  document.getElementById("otolowkupumsu").value = otolowkupumsu;
-  document.getElementById("lowkupumsu").value = lowkupumsu;
-  document.getElementById("highkupumsu").value = highkupumsu;
-  document.getElementById("midkupumsu").value = midkupumsu;
+  document.getElementById("autototal").value = AutoTotal;
+  document.getElementById("teletotal").value = TeleTotal;
   document.getElementById("chargingstationstatus").value = ChargingStationStatus;
   document.getElementById("GridStatus").value = grid;
   document.getElementById("mainform").action = "save.php";

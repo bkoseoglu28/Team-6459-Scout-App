@@ -1,17 +1,7 @@
 <?php
 include 'connection/connection.php';
-$otohighkoni= $_POST["otohighkoni"];
-$otomidkoni= $_POST["otomidkoni"];
-$otolowkoni= $_POST["otolowkoni"];
-$lowkoni= $_POST["lowkoni"];
-$highkoni= $_POST["highkoni"];
-$midkoni= $_POST["midkoni"];
-$otohighkupumsu= $_POST["otohighkupumsu"];
-$otomidkupumsu= $_POST["otomidkupumsu"];
-$otolowkupumsu= $_POST["otolowkupumsu"];
-$lowkupumsu= $_POST["lowkupumsu"];
-$highkupumsu= $_POST["highkupumsu"];
-$midkupumsu= $_POST["midkupumsu"];
+$autototal= $_POST["autototal"];
+$teletotal= $_POST["teletotal"];
 $chargingstationstatus = $_POST["chargingstationstatus"];
 $hangarcheckbox = $_POST["hangarcheckbox"];
 $ballcheckbox = $_POST["ballcheckbox"];
@@ -27,11 +17,11 @@ $grid = $_POST["GridStatus"];
 if ($chargingstationstatus==1){
 	$totalpoint = 2;
 }elseif ($chargingstationstatus==2){
-	$totalpoint = 6;
+	$totalpoint = 8;
 }elseif ($chargingstationstatus==3){
-	$totalpoint = 10;
+	$totalpoint = 12;
 }
-
+$totalpoint = $totalpoint+$autototal+$teletotal;
 
 
 function getip(){
@@ -51,7 +41,7 @@ $ip = getip();
 
 
 
-$sql = "INSERT INTO `data` (`req_ip`, `teamid`,`highkoni`, `otohighkoni`, `midkoni`, `otomidkoni`, `lowkoni`, `otolowkoni`, `highkupumsu`, `otohighkupumsu`, `midkupumsu`, `otomidkupumsu`, `lowkupumsu`, `otolowkupumsu`, `chargingstationstatus`, `hangarcheckbox`, `ballcheckbox`, `defanscheckbox`, `imagerawdata`, `matchid`, `notes`, `totalpoint`, `penalties`, `grid`) VALUES ('$ip', '$teamid','$highkoni', '$otohighkoni', '$midkoni', '$otomidkoni', '$lowkoni', '$otolowkoni', '$highkupumsu', '$otohighkupumsu', '$midkupumsu', '$otomidkupumsu', '$lowkupumsu', '$otolowkupumsu', '$chargingstationstatus', '$hangarcheckbox', '$ballcheckbox', '$defanscheckbox', '$imagerawdata', '$matchid', '$notes', '$totalpoint', '$penalties', '$grid');";
+$sql = "INSERT INTO `data` (`req_ip`, `teamid`, `autototal`, `teletotal`, `chargingstationstatus`, `hangarcheckbox`, `ballcheckbox`, `defanscheckbox`, `imagerawdata`, `matchid`, `notes`, `totalpoint`, `penalties`, `grid`) VALUES ('$ip', '$teamid', '$autototal', '$teletotal', '$chargingstationstatus', '$hangarcheckbox', '$ballcheckbox', '$defanscheckbox', '$imagerawdata', '$matchid', '$notes', '$totalpoint', '$penalties', '$grid');";
 if($conn->query($sql)){
 	header("location:index.html");
 }else{
