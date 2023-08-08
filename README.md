@@ -33,8 +33,9 @@ Explore historical data, including team awards and rankings from previous years.
 ## Screenshots
 
 ![Screenshot 1](/img/github/FormUI.gif)
+![Screenshot 1](/img/github/Index.gif)
 
-*The Form Page That The Student Write*
+*First One The Form And The Second Index Page*
 
 ![Screenshot 2](/img/github/GridUI.jpg)
 *Fully Functional Grid Placement UI*
