@@ -185,7 +185,7 @@ else{
   echo "Fotoğraf yok";
 }
  ?>      
-              <img id="canvasimg" style="width: min-content;display:none;">
+              <img id="canvasimg" style="width: min-content;height: 450px;display:none;">
               <br>
               <div class="top-cat-list__titlez">Rankings</div>
               <div class="top-cat-list__subtitlep"><?php 
@@ -224,6 +224,7 @@ else{
 $sql = "SELECT * FROM data where teamid = '$teamid' ";
 $result = $conn->query($sql);
 $total = 0;
+$objecttotal = 0;
 $count = 0;
 
 
@@ -233,7 +234,7 @@ if ($result->num_rows > 0) {
   while($row = $result->fetch_assoc()) {
 $count = $count + 1;  
 $total = $total + $row["totalpoint"]; 
-
+$objecttotal=$objecttotal + $row["objecttotal"]; 
 
 
   ?> 
@@ -243,7 +244,7 @@ $total = $total + $row["totalpoint"];
                 <li>
                   <a href="details.php?id=<?php echo $row["id"]; ?>" >
                     <br>
-                    <div id="grid-col-1"> 
+                    <div style="margin:auto;" id="grid-col-1"> 
                     <?php
                     $grid = explode(",", $row["grid"]);
                     
@@ -274,7 +275,7 @@ $total = $total + $row["totalpoint"];
                   }
                     ?>
                     </div>
-                    <div id="grid-col-2"> 
+                    <div style="margin:auto;" id="grid-col-2"> 
                     <?php
                     
 
@@ -299,7 +300,7 @@ $total = $total + $row["totalpoint"];
                   }
                     ?>
                     </div>
-                    <div id="grid-col-3"> 
+                    <div style="margin:auto;" id="grid-col-3"> 
                     <?php
                     
 
@@ -330,6 +331,9 @@ $total = $total + $row["totalpoint"];
                     </div><br>
                     <div class="top-cat-list__subtitle">
                       Teleop Total <span class="warning"><?php echo $row["teletotal"]; ?></span>
+                    </div><br>
+                    <div class="top-cat-list__subtitle">
+                      Yerleştirilen Obje <span class="warning"><?php echo $row["objecttotal"]; ?></span>
                     </div><br>
                     <div class="top-cat-list__title">
                       Toplam Puan <span><?php echo $row["totalpoint"] ?></span>
@@ -370,6 +374,7 @@ $total = $total + $row["totalpoint"];
     <?php
   }
   echo "<br> Ortalama Puanları = ".$total/$count;
+  echo "<br><br> Ortalama Obje Sayısı = ".$objecttotal/$count;
 } else {
   echo "0 results";
 }

@@ -23,7 +23,7 @@ return $total/$count;
 
 
 
-function getHTAverage($teamid){
+function getObjectAverage($teamid){
   global $conn;
 $sql = "SELECT * FROM data where teamid = '$teamid' ";
 $result = $conn->query($sql);
@@ -33,7 +33,7 @@ if ($result->num_rows > 0) {
   // output data of each row
   while($row = $result->fetch_assoc()) {
 $count = $count + 1;  
-$total = $total + $row["highteleop"];
+$total = $total + $row["objecttotal"];
 }
 
 return $total/$count;
@@ -210,7 +210,7 @@ class PersonComparer
 }
 
 $group = [];
-$highteleopgroup = [];
+$objectteleopgroup = [];
 
 
 
@@ -226,7 +226,7 @@ if(!in_array($teamid, $teamarray)){
 
 
   array_push($group, new Person('"'.$teamid.'"', getAverage($teamid)));
-  array_push($highteleopgroup, new Person('"'.$teamid.'"', getHTAverage($teamid)));
+  array_push($objectteleopgroup, new Person('"'.$teamid.'"', getObjectAverage($teamid)));
 
   array_push($averagearray, getAverage($teamid));
   echo '<script>console.log('.getAverage($teamid).');</script>';
@@ -245,7 +245,7 @@ if(!in_array($teamid, $teamarray)){
   }
 
 usort($group, ['PersonComparer', 'compare']);
-usort($highteleopgroup, ['PersonComparer', 'compare']);
+usort($objectteleopgroup, ['PersonComparer', 'compare']);
 $multiple_array = array();
 $arrlength = count($averagearray);
 
@@ -269,7 +269,7 @@ function get_string_between($string, $start, $end){
 
 $isthefirst = 1;
 $group = array_reverse($group);
-$highteleopgroup = array_reverse($highteleopgroup);
+$objectteleopgroup = array_reverse($objectteleopgroup);
 foreach($group as $value){
   foreach ($value as $v){
     if($isthefirst == 1){
@@ -301,21 +301,10 @@ foreach($group as $value){
     }
    
   } 
-
-
-
-
 } else {
   echo "0 results";
 }
-
-?>
-
-
-
-
-
-           
+?>       
               </ul>
             </article>
           </div>
@@ -325,14 +314,8 @@ foreach($group as $value){
                 <h3>Robot Top Atma Sıralaması</h3>
               </div>
               <ul class="top-cat-list">
-
-
-
-
-
 <?php 
-
-foreach($highteleopgroup as $value){
+foreach($objectteleopgroup as $value){
   foreach ($value as $v){
     if($isthefirst == 1){
       $isthefirst = 0;
@@ -355,30 +338,14 @@ foreach($highteleopgroup as $value){
                       Team '.$teamname.' <span>'.$realaverage.'</span>
                     </div>
                     <div class="top-cat-list__subtitle">
-                      HIGH TELEOP AVG. '.$realaverage.' <span class="success">'.$realaverage.'</span>
+                      Placed Object AVG. '.$realaverage.' <span class="success">'.$realaverage.'</span>
                     </div>
                   </a>
                 </li>';
    }
     }
-   
   } 
-
-
-
  ?>
-
-
-
-
-
-
-
-
-
-
-
-
               </ul>
             </article>
           </div>
@@ -392,7 +359,6 @@ foreach($highteleopgroup as $value){
       <p>-2023 © Vually-<a href="##" target="_blank"
           rel="noopener noreferrer">#Team 6459</a></p>
     </div>
-
   </div>
 </footer>
   </div>

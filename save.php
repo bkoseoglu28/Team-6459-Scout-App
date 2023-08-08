@@ -12,6 +12,7 @@ $notes = $_POST["notes"];
 $matchid = $_POST["matchid"];
 $penalties = $_POST["penalties"];
 $grid = $_POST["GridStatus"];
+$objecttotal = $_POST["objecttotal"];
 
 
 if ($chargingstationstatus==1){
@@ -41,7 +42,7 @@ $ip = getip();
 
 
 
-$sql = "INSERT INTO `data` (`req_ip`, `teamid`, `autototal`, `teletotal`, `chargingstationstatus`, `hangarcheckbox`, `ballcheckbox`, `defanscheckbox`, `imagerawdata`, `matchid`, `notes`, `totalpoint`, `penalties`, `grid`) VALUES ('$ip', '$teamid', '$autototal', '$teletotal', '$chargingstationstatus', '$hangarcheckbox', '$ballcheckbox', '$defanscheckbox', '$imagerawdata', '$matchid', '$notes', '$totalpoint', '$penalties', '$grid');";
+$sql = "INSERT INTO `data` (`req_ip`, `teamid`, `autototal`, `teletotal`, `objecttotal`, `chargingstationstatus`, `hangarcheckbox`, `ballcheckbox`, `defanscheckbox`, `imagerawdata`, `matchid`, `notes`, `totalpoint`, `penalties`, `grid`) VALUES ('$ip', '$teamid', '$autototal', '$teletotal', '$objecttotal', '$chargingstationstatus', '$hangarcheckbox', '$ballcheckbox', '$defanscheckbox', '$imagerawdata', '$matchid', '$notes', '$totalpoint', '$penalties', '$grid');";
 if($conn->query($sql)){
 	header("location:index.html");
 }else{

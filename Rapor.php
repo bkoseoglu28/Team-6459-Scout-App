@@ -51,6 +51,7 @@
     <form class="sign-up-form form" id="mainform" action="" method="POST">
     <input type="hidden" name="autototal" id="autototal" value="0">
     <input type="hidden" name="teletotal" id="teletotal" value="0">
+    <input type="hidden" name="objecttotal" id="objecttotal" value="0">
       <input type="hidden" name="chargingstationstatus" id="chargingstationstatus" value="0">
       <input type="hidden" name="hangarcheckbox" id="hangarcheckbox" value="0">
       <input type="hidden" name="ballcheckbox" id="ballcheckbox" value="0">
@@ -104,8 +105,10 @@
 <script type="text/javascript">
 var AutoTotal = 0;
 var TeleTotal = 0;
+var objecttotal = 0;
 var TeleTotalisAlreadySaved = 0;
 var AutoTotalisAlreadySaved = 0;
+var ObjectTotalisAlreadySaved = 0;
 var IsGridAlreadySaved = 0;
 var IsStationSaved = 0;
 var ChargingStationStatus = 0;
@@ -130,6 +133,8 @@ if($_POST){
   echo 'AutoTotalisAlreadySaved = 1;
   ';
   echo 'TeleTotalisAlreadySaved = 1;
+  ';
+  echo 'ObjectTotalisAlreadySaved = 1;
   ';
   echo 'IsStationSaved = '.$_POST["hangarcheckbox"].';
   ';
@@ -186,15 +191,18 @@ if (Image.alt==0){Image.style.backgroundImage = `url(${Image.src})`;
     grid[0][konumlar[2]-1] = 2;
     console.log(`${grid}`);
     AutoTotal = AutoTotal+6
+    objecttotal = objecttotal+1
   }
   else if (konumlar[1]==`Mid`){
     grid[1][konumlar[2]-1] = 2;
     console.log(`${grid}`);
     AutoTotal = AutoTotal+4
+    objecttotal = objecttotal+1
   }else if (konumlar[1]==`Low`){
     grid[2][konumlar[2]-1] = 2;
     console.log(`${grid}`);
     AutoTotal = AutoTotal+3
+    objecttotal = objecttotal+1
   }else{
     console.log(`Unexpected Position column:${konumlar[1]} row:${konumlar[2]}`);
   }
@@ -209,15 +217,18 @@ if (Image.alt==0){Image.style.backgroundImage = `url(${Image.src})`;
     grid[0][konumlar[2]-1] = 1;
     console.log(`${grid}`);
     TeleTotal=TeleTotal+5
+    objecttotal = objecttotal+1
   }
   else if (konumlar[1]==`Mid`){
     grid[1][konumlar[2]-1] = 1;
     console.log(`${grid}`);
     TeleTotal=TeleTotal+3
+    objecttotal = objecttotal+1
   }else if (konumlar[1]==`Low`){
     grid[2][konumlar[2]-1] = 1;
     console.log(`${grid}`);
     TeleTotal=TeleTotal+2
+    objecttotal = objecttotal+1
   }else{
     console.log(`Unexpected Position column:${konumlar[1]} row:${konumlar[2]}`);
   }
@@ -325,6 +336,7 @@ function SaveStation(givenStationStatus){
 function AutoDraw(){
   document.getElementById("autototal").value = AutoTotal;
   document.getElementById("teletotal").value = TeleTotal;
+  document.getElementById("objecttotal").value = objecttotal;
   document.getElementById("chargingstationstatus").value = ChargingStationStatus;
   document.getElementById("GridStatus").value = grid;
   document.getElementById("mainform").action = "form.php";
@@ -335,6 +347,7 @@ function AutoDraw(){
 function SendForm(){
   document.getElementById("autototal").value = AutoTotal;
   document.getElementById("teletotal").value = TeleTotal;
+  document.getElementById("objecttotal").value = objecttotal;
   document.getElementById("chargingstationstatus").value = ChargingStationStatus;
   document.getElementById("GridStatus").value = grid;
   document.getElementById("mainform").action = "save.php";
