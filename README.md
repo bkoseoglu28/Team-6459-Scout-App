@@ -34,8 +34,9 @@ Explore historical data, including team awards and rankings from previous years.
 
 ![Screenshot 1](/img/github/FormUI.gif)
 ![Screenshot 1](/img/github/Index.gif)
+![Screenshot 1](/img/github/SearchUI.gif)
 
-*First One The Form And The Second Index Page*
+*First One The Form, The Second Index Page And The Third Is Search*
 
 ![Screenshot 2](/img/github/GridUI.jpg)
 *Fully Functional Grid Placement UI*
