@@ -2,15 +2,15 @@
 
 ![App Logo](/img/svg/apple-touch-icon.png)
 
-Welcome to the Team 6459 FRC Scouting App! Our app is designed to revolutionize how we scout and strategize during FIRST Robotics Competition events. With a comprehensive set of features, we're empowered to make informed decisions and achieve success like never before.
+Welcome to the Team 6459 FRC Scouting App! Our app is designed to make clear how we scout and strategize during FIRST Robotics Competition events. With a comprehensive set of features, for making informed decisions and achieve success.
 
 ## Features
 
 ### Match Tracking and Data Entry
-Effortlessly monitor FRC matches using a user-friendly 9x3 grid layout. Record essential match details, team numbers, and penalties incurred.
+Effortlessly monitor FRC matches using a user-friendly form. Record essential match details, team numbers, and penalties incurred.
 
 ### Object Placement Tracking
-Accurately track placed objects on the field with the 9x3 grid's visual representation. Gain insights into team performance and object placements.
+Accurately track placed objects on the Grids with the 9x3 grid's visual representation. Gain insights into team performance and object placements.
 
 ### Autonomous Mode Analysis
 Sketch robot trajectories during autonomous mode using the game map. Categorize robots as defense-oriented or not, and track charging stations and climbing achievements.
@@ -23,9 +23,6 @@ Simplify alliance selection with quick searches for other teams' information. Ma
 
 ### Pit Scouting
 Extend functionality with dedicated pit scouting. Capture robot images and record drive train details to understand competing robots' capabilities.
-
-### Quick Reference Manual
-Access instructions and guidelines quickly with the built-in manual. Streamline the scouting process for all team members.
 
 ### Historical Insights
 Explore historical data, including team awards and rankings from previous years. Gain context for assessing other teams' performance.
@@ -45,9 +42,10 @@ Explore historical data, including team awards and rankings from previous years.
 
 - Integrates PHP for database management.
 - Utilizes MySQL for database storage.
+- Utilizes SweetAlert2 for some templates.
 - Utilizes BeautifulSoup, a Python library, for retrieving information from the internet.
 - HTML, CSS, and JavaScript for custom buttons and web design.
 
 ## Contact
 
-If you have any questions or suggestions, feel free to reach out to us at koseogluberk338@gmail.com
+If you have any questions or suggestions, feel free to reach out to me at koseogluberk338@gmail.com
