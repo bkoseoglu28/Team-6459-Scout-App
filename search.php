@@ -179,6 +179,7 @@ if ($presult->num_rows > 0) {
   // output data of each row
   while($row = $presult->fetch_assoc()) {
 $robotphoto = $row["robotphoto"];
+$drivetrain = $row["drivetrain"];
 }
 } 
 else{
@@ -187,6 +188,7 @@ else{
  ?>      
               <img id="canvasimg" style="width: min-content;height: 450px;display:none;">
               <br>
+              <h2 class="main-title"><?php echo sprintf("Drive Train: %s", $drivetrain);  ?></h2>
               <div class="top-cat-list__titlez">Rankings</div>
               <div class="top-cat-list__subtitlep"><?php 
               
@@ -245,6 +247,7 @@ $objecttotal=$objecttotal + $row["objecttotal"];
                   <a href="details.php?id=<?php echo $row["id"]; ?>" >
                     <br>
                     <div style="margin:auto;" id="grid-col-1"> 
+                    
                     <?php
                     $grid = explode(",", $row["grid"]);
                     

@@ -220,6 +220,7 @@
     <form class="sign-up-form form" action="" id="camerascform" method="POST" style="margin-top: 3%;" class="col-sm-10 col-md-4 col-lg-2">
 <input type="hidden" name="robotphoto" id="robotphoto" value="">
 <input type="hidden" name="pteamid" id="pteamid" value="">
+<input type="hidden" name="drivetrain" id="drivetrain" value="">
 
 <div class="cameracontentarea">
 <div class="camera">
@@ -231,6 +232,8 @@
  <div class="cameraoutput">
  <img id="cameraphoto" alt="The screen capture will appear in this box."> 
 </div>
+<input class="form-input" type="text" name="drivetrain" id="drivetrain" placeholder="Drive Train" required>  
+<br>
 <input class="form-input" type="number" name="pteamid" id="pteamid" placeholder="Takım Numarasını Girin" required>  
 </div>
 
