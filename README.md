@@ -32,7 +32,7 @@ Explore historical data, including team awards and rankings from previous years.
 
 ## Screenshots
 
-![Screenshot 1](/img/github/FormUI.jpg)
+![Screenshot 1](/img/github/FormUI.gif)
 *The Form Page That The Student Write*
 
 ![Screenshot 2](/img/github/GridUI.jpg)
