@@ -38,6 +38,30 @@ Explore historical data, including team awards and rankings from previous years.
 ![Screenshot 2](/img/github/GridUI.jpg)
 *Fully Functional Grid Placement UI*
 
+## Setup Instructions
+
+* Step 1: Clone the repository
+```
+git clone github.com/bkoseoglu28/Team-6459-Scout-App
+```
+
+* Step 2: Navigate to the repository directory
+```
+cd Team-6459-Scout-App
+```
+
+- Step 3: Import the database to your local server's database system.
+     If using the MySQL command-line:
+```
+mysql -u [username] -p [password] < Team-6459-Scout-App/appdb2023.sql
+```
+
+* Step 4: Run the project. Navigate to the project's index.php file in your web browser:
+```
+http://localhost/Team-6459-Scout-App/index.php
+```
+ Ensure your local server (like XAMPP, WAMP, etc.) is running.
+
 ## Technologies
 
 - Integrates PHP for database management.
